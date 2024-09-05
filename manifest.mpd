@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="http://www.w3.org/ns/dash" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/ns/dash http://www.w3.org/ns/dash/dash.xsd" 
+    profiles="urn:mpeg:dash:profile:isoff-on-demand:1.1" type="static" mediaPresentationDuration="PT1H">
+    
+    <Period id="1" start="PT0S">
+        <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentComponent id="1" contentType="video" />
+            <Representation id="1" bandwidth="500000" width="640" height="360" codecs="avc1.4d401e">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <SegmentList duration="2000000" startNumber="1">
+                    <SegmentURL media="babel$Number$.mp4" />
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+        
+        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentComponent id="2" contentType="audio" />
+            <Representation id="2" bandwidth="128000" codecs="mp4a.40.2">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <SegmentList duration="2000000" startNumber="1">
+                    <SegmentURL media="audio$Number$.mp4" />
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+        
+        <AdaptationSet mimeType="application/x-mpegURL">
+            <ContentComponent id="3" contentType="text" />
+            <Representation id="3">
+                <BaseURL>https://bpwta4.akamaized.net/bpk-tv/irdeto_com_Channel_221/output/</BaseURL>
+                <SegmentList duration="2000000" startNumber="1">
+                    <SegmentURL media="subtitles$Number$.vtt" />
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+    </Period>
+    
+    <ContentProtection>
+        <ProtectionSystem>urn:mpeg:dash:mp4protection:2011</ProtectionSystem>
+        <cenc:pssh xmlns:cenc="urn:mpeg:cenc:2013" value="AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEIBwCHp/c1NeuXe1ZGXksjU44KfmtgY=" />
+        <cenc:default_KID xmlns:cenc="urn:mpeg:cenc:2013" value="8070087a-7f73-535e-b977-b56465e4b235" />
+        <cenc:default_Key xmlns:cenc="urn:mpeg:cenc:2013" value="011ca39ef5fc423326b3884cb95eebac" />
+    </ContentProtection>
+</MPD>
